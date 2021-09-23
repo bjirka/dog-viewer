@@ -1,0 +1,19 @@
+.header{
+    background: #1e81b0;
+    position: fixed;
+    width: 100vw;
+    height: 45px;
+    line-height: 45px;
+    padding-left: 25px;
+    box-shadow: 0px 5px 3px #333;
+}
+
+.titleLink, .titleLink:active, .titleLink:visited{
+    color: #eeeee4;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+}
+.titleLink:hover{
+    color: #ffffff;
+}

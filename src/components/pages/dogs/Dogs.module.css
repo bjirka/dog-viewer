@@ -1,0 +1,29 @@
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 55px;
+}
+
+.wrapper img{
+    max-width: calc(100vw - 75px);
+}
+
+.breedTitle{
+    width: calc(100% - 30px);
+    font-size: 20px;
+    font-weight: bold;
+    padding-left: 8px;
+}
+
+.picRow{
+    display: grid;
+    grid-template-columns: 25px auto;
+    width: 100%;
+    margin: 8px 0;
+}
+
+.picNumber{
+    font-size: 30px;
+}
