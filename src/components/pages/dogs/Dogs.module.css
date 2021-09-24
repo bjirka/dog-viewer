@@ -17,6 +17,19 @@
     padding-left: 8px;
 }
 
+.backLink{
+    float: right;
+    background: #ddd;
+    border: 1px solid #999;
+    border-radius: 15px;
+    padding: 5px;
+    font-size: 16px;
+}
+
+.backLink a:visited, .backLink a:active, .backLink a{
+    text-decoration: none;
+}
+
 .picRow{
     display: grid;
     grid-template-columns: 25px auto;

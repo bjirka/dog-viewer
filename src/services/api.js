@@ -49,7 +49,10 @@ const getBreeds = () => {
 const getPics = (breed, maxPics) => {
     return axios.get(`${API_BASE_URL}/breed/${breed}/images`)
         .then((response) => {
-            return response.data.message.slice(0, maxPics);
+            // randomly shuffle the array so we can random pics each time
+            const shuffledArray = response.data.message.sort(() => 0.5 - Math.random());
+            // only return the first 'maxPics' number of pics
+            return shuffledArray.slice(0, maxPics);
         })
         .catch((error) => {
             console.log("Error Getting Dogs");

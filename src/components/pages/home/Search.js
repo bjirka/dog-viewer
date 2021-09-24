@@ -41,7 +41,7 @@ const Search = () => {
             setErrorMessage("You must select a breed!");
             return false;
         }
-        if(maxPics < 1 || maxPics > 10){
+        if(!(maxPics >= 1 && maxPics <= 10)){
             setErrorMessage("Max Pics must be between 1 and 10!");
             return false;
         }
@@ -67,8 +67,8 @@ const Search = () => {
                 <form onSubmit={submitHandler}>
                     <div className={classes.row}>
                         <label htmlFor="breed">Dog Breed: </label>
-                        <select id="breed" onChange={breedHandler}>
-                            <option disabled selected value="-1">Select A Breed</option>
+                        <select id="breed" onChange={breedHandler} value={selectedBreed}>
+                            <option disabled value="-1">Select A Breed</option>
                             {breeds.map((breed) => <option key={breed.value} value={breed.value}>{breed.name}</option>)}
                         </select>
                     </div>
