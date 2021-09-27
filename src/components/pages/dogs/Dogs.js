@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useLocation } from "react-router";
+import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { apiProvider } from '../../../services/api';
 import classes from './Dogs.module.css';
@@ -7,6 +7,8 @@ import classes from './Dogs.module.css';
 const Dogs = (props) => {
 
     const location = useLocation();
+    // location.state.breed is a string containing the breed to fetch
+    // location.state.maxPics is the maximum number of pics to return
 
     const [pics, setPics] = useState([]);
 
@@ -14,7 +16,9 @@ const Dogs = (props) => {
         // get array of breeds on load
         apiProvider.getPics(location.state.breed, location.state.maxPics).then((response) => {
             setPics(response);
-        })
+        }).catch((err) => {
+            console.log(err);
+        });
     },[location.state.breed, location.state.maxPics]);
 
     let picCount = 0;
